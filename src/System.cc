@@ -274,9 +274,11 @@ cv::Mat System::TrackMonocular(const cv::Mat &im, const double &timestamp)
         mbReset = false;
     }
     }
-
+//    std::chrono::steady_clock::time_point t1 = std::chrono::steady_clock::now();
     cv::Mat Tcw = mpTracker->GrabImageMonocular(im,timestamp);
-
+//    std::chrono::steady_clock::time_point t2 = std::chrono::steady_clock::now();
+//    double ttrack= std::chrono::duration_cast<std::chrono::duration<double> >(t2 - t1).count();
+//    cout << "tracking time GrabImageMonocular " << ttrack << endl;
     unique_lock<mutex> lock2(mMutexState);
     mTrackingState = mpTracker->mState;
     mTrackedMapPoints = mpTracker->mCurrentFrame.mvpMapPoints;

@@ -1,3 +1,7 @@
+.idea
+Examples/Monocular/benchmark_*
+cmake-build-debug
+cmake-build-release
 CMakeLists.txt.user
 Examples/Monocular/mono_euroc
 Examples/Monocular/mono_kitti
